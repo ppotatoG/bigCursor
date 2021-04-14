@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cursor</title>
     <style>
+        *{margin: 0;padding: 0;}
         #wrap {
             width: 100vw;
             height: 100vh; 
@@ -13,6 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             }
         div {
             width: 300px;
@@ -23,43 +25,46 @@
             position: absolute; 
             display: block; 
             width: 100px; 
-            height: auto;
+            height: 100px;
             }
         img.none {display: none;}
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div><img class="" src="ddddddd.jpg" alt=""></div>
+        <div><img class="none" src="ddddddd.jpg" alt=""></div>
     </div>
 </body>
 
 <script>
 
-const img = document.querySelector('img')
+const wrap = document.querySelector('#wrap')
 const div = document.querySelector('#wrap div')
+const img = document.querySelector('img')
 
 function resultFun(x) {
     let positionLeft = x.clientX;
     let positionTop = x.clientY;
 
     const imgWidth = img.offsetWidth;
-    const imgHwight = img.offsetHeight;
+    const imgHeight = img.offsetHeight;
 
     let imgTop = img.style.top=positionTop-imgWidth/2+'px'
-    let imgleft=img.style.left=positionLeft-imgHwight/2+'px'
+    let imgleft = img.style.left=positionLeft+'px'
 }
 
 window.addEventListener('load', function(){
     div.addEventListener('mouseover', function(){
-        document.addEventListener("mousemove",resultFun);
+        console.log('mouseover')
+        document.addEventListener("mousemove",resultFun);  
         img.classList.remove('none')
     })
-
     div.addEventListener('mouseout', function(){
-        document.removeEventListener("mousemove",resultFun);
+        console.log('mouseout')
+        document.removeEventListener("mousemove",resultFun);    
         img.classList.add('none')
     })
 })
+
 </script>
 </html>
