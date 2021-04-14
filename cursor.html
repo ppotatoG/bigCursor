@@ -7,8 +7,8 @@
     <title>cursor</title>
     <style>
         #wrap {
-            width: 1000px; 
-            height: 1000px; 
+            width: 100vw;
+            height: 100vh; 
             background-color: #eee;
             display: flex;
             justify-content: center;
@@ -30,7 +30,7 @@
 </head>
 <body>
     <div id="wrap">
-        <div><img class="none" src="ddddddd.jpg" alt=""></div>
+        <div><img class="" src="ddddddd.jpg" alt=""></div>
     </div>
 </body>
 
@@ -39,15 +39,16 @@
 const img = document.querySelector('img')
 const div = document.querySelector('#wrap div')
 
-
 function resultFun(x) {
     let positionLeft = x.clientX;
     let positionTop = x.clientY;
 
-    let imgTop = img.style.top=positionTop+'px'
-    let imgleft=img.style.left=positionLeft+'px'
-}
+    const imgWidth = img.offsetWidth;
+    const imgHwight = img.offsetHeight;
 
+    let imgTop = img.style.top=positionTop-imgWidth/2+'px'
+    let imgleft=img.style.left=positionLeft-imgHwight/2+'px'
+}
 
 window.addEventListener('load', function(){
     div.addEventListener('mouseover', function(){
