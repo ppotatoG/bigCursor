@@ -6,21 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cursor</title>
     <style>
-        #wrap {width: 1000px; height: 1000px; background-color: #eee;}
-        div{width: 300px; height: 300px; background-color: #333;}
-        img{position: absolute; display: block; width: 100px; height: auto;}
-        img.none{display: none;}
+        #wrap {
+            width: 1000px; 
+            height: 1000px; 
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
+        div {
+            width: 300px;
+            height: 300px; 
+            background-color: #333;
+            }
+        img {
+            position: absolute; 
+            display: block; 
+            width: 100px; 
+            height: auto;
+            }
+        img.none {display: none;}
     </style>
 </head>
 <body>
     <div id="wrap">
-        <div><img src="ddddddd.jpg" alt=""></div>
+        <div><img class="none" src="ddddddd.jpg" alt=""></div>
     </div>
 </body>
 
 <script>
 
 const img = document.querySelector('img')
+const div = document.querySelector('#wrap div')
+
 
 function resultFun(x) {
     let positionLeft = x.clientX;
@@ -30,7 +48,6 @@ function resultFun(x) {
     let imgleft=img.style.left=positionLeft+'px'
 }
 
-let div = document.querySelector('#wrap div')
 
 window.addEventListener('load', function(){
     div.addEventListener('mouseover', function(){
