@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#wrap {
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#wrap div {
+  width: 300px;
+  height: 300px;
+  background-color: #333;
+}
+
+#wrap img {
+  position: absolute;
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+#wrap img.none {
+  display: none;
+}
+/*# sourceMappingURL=styel.css.map */
