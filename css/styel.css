@@ -25,14 +25,16 @@
   background-color: #333;
 }
 
-#wrap img {
+#wrap i {
+  font-size: 200px;
+  color: yellow;
   position: absolute;
   display: block;
   width: 100px;
   height: 100px;
 }
 
-#wrap img.none {
+#wrap i.none {
   display: none;
 }
 /*# sourceMappingURL=styel.css.map */
