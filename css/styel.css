@@ -20,21 +20,21 @@
 }
 
 #wrap div {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   background-color: #333;
 }
 
-#wrap i {
-  font-size: 200px;
-  color: yellow;
-  position: absolute;
+#wrap #box {
   display: block;
-  width: 100px;
-  height: 100px;
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(yellow), to(red));
+  background: linear-gradient(to right, yellow, red);
+  width: 50px;
+  height: 50px;
 }
 
-#wrap i.none {
+#wrap #box.none {
   display: none;
 }
 /*# sourceMappingURL=styel.css.map */

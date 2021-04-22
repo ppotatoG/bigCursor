@@ -1,25 +1,24 @@
-const wrap = document.querySelector('#wrap')
-const div = document.querySelector('#wrap div')
-const i = document.querySelector('i')
+const box = document.querySelector('#box');
 
 function resultFun(x) {
-    let positionLeft = x.clientX;
-    let positionTop = x.clientY;
+    const positionLeft = x.clientX;
+    const positionTop = x.clientY;
 
-    const iWidth = i.offsetWidth;
-    const iHeight = i.offsetHeight;
+    const boxWidth = box.offsetWidth;
+    const boxHeight = box.offsetHeight;
 
-    let iTop = i.style.top=positionTop-iWidth/2+'px'
-    let ileft = i.style.left=positionLeft+'px'
+    box.style.left = positionLeft - boxWidth / 2 + "px";
+    box.style.top = positionTop - boxHeight / 2 + "px";
 }
 
-window.addEventListener('load', function(){
-    div.addEventListener('mouseover', function(){
-        document.addEventListener("mousemove",resultFun);  
-        i.classList.remove('none')
-    })
+const div = document.querySelector('#wrap >div')
+
+div.addEventListener('mouseover', function(){
+    document.addEventListener('mousemove', resultFun);
+    box.classList.remove('none')
 })
 
-// window.addEventListener('load', resultFun)
-
-// resultFun()
+div.addEventListener('mouseout', function(){
+    document.removeEventListener('mousemove', resultFun);
+    box.classList.add('none')
+})

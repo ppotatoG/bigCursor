@@ -9,18 +9,17 @@
     align-items: center;
     position: relative;
     div {
-        width: 300px;
-        height: 300px; 
+        width: 200px;
+        height: 200px; 
         background-color: #333;
-        }
-    i {
-        font-size: 200px;
-        color: yellow;
-        position: absolute; 
-        display: block; 
-        width: 100px; 
-        height: 100px;
-    &.none {display: none;}
+    }
+    #box {
+        display: block;
+        position: absolute;
+        background: linear-gradient( to right, yellow, red );
+        width: 50px;
+        height: 50px;
+        &.none {display: none;}
     }
 }
 
